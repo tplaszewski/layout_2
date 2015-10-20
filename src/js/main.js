@@ -26,42 +26,6 @@ $(document).ready(function(){
     });    
 });
 
-var main = function() {
-  /* Push the body and the nav over by 285px over */
-  $('.button-menu').click(function() {
-    $('.menu').animate({
-      right: "0px"
-    }, 200);
-
-    $('body').animate({
-      right: "285px"
-    }, 200);
-  });
-  /* Then push them back */
-  $('.icon-close').click(function() {
-    $('.menu').animate({
-      right: "-285px"
-    }, 200);
-    $('body').animate({
-      right: "0px"
-    }, 200);
-  });
-};
-
-$(document).ready(main);
-var width = $(window).width();
-    if ((width <= 991)) {
-        $('.center-col').removeClass('equal_height');
-        $('.right-col').removeClass('equal_height');
-    }
-
-    if ((width <= 1024)) {
-        $('#first-section').removeClass('parallax');
-        $('#second-section').removeClass('parallax');
-        $('#third-section').removeClass('parallax');
-    }
-
-
 
 $(document).ready(function(){
     wow = new WOW(
@@ -89,22 +53,166 @@ window.onload = function () {
             var styles = [
     {
         "featureType": "all",
-        "elementType": "all",
+        "elementType": "labels.text.fill",
         "stylers": [
             {
-                "invert_lightness": true
+                "saturation": 36
             },
             {
-                "saturation": 10
+                "color": "#000000"
             },
             {
-                "lightness": 30
+                "lightness": 40
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
             },
             {
-                "gamma": 0.5
+                "color": "#000000"
             },
             {
-                "hue": "#435158"
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 21
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": 0.2
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
             }
         ]
     }
@@ -150,11 +258,19 @@ $(function() {
 	});
 
 
+
+
 $(document).ready(function() {  
     $("#carousel-example-generic").swiperight(function() {  
         $(this).carousel('prev');  
-    });     
+    }); 
+    $("#slider-top").swiperight(function() {  
+        $(this).carousel('prev');  
+    });
     $("#carousel-example-generic").swipeleft(function() {  
         $(this).carousel('next');  
     });  
+    $("#slider-top").swipeleft(function() {  
+        $(this).carousel('next');  
+    });
 });  

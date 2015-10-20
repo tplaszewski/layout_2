@@ -1,5 +1,7 @@
 @import "../css/bootstrap.min.css";
 @import "../css/bootstrap-theme.min.css";
+@import "../css/libs/animate.css";
+@import "../css/jquery.fancybox.css";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -192,6 +194,13 @@ i {
   margin-bottom: 25px;
   display: inline-block;
 }
+a {
+  font-size: inherit;
+  color: inherit;
+}
+.one-of-four {
+  width: 25%;
+}
 header.navbar {
   padding: 37px 0;
   top: 0;
@@ -205,12 +214,49 @@ header.navbar {
 }
 header nav ul li {
   font-size: 1.4rem;
+  color: #615f50;
 }
 footer {
   background-color: #2f2f2b;
   text-align: center;
-  font-size: 1.4rem;
   padding: 63px 0;
+  font-size: 1.4rem;
+}
+footer .social {
+  text-align: center;
+  margin-bottom: 20px;
+}
+footer .social li {
+  display: inline-block;
+  margin-right: 5px;
+}
+footer .social li:last-child {
+  margin-right: 0;
+}
+footer .social li a {
+  background-image: url(../img/ico_social.png);
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  display: inline-block;
+}
+footer .social li a:hover {
+  opacity: 0.8;
+}
+footer .social li.google a {
+  background-position: 0 0;
+}
+footer .social li.facebook a {
+  background-position: -43px 0;
+}
+footer .social li.linkedin a {
+  background-position: -85px 0;
+}
+footer .social li.skype a {
+  background-position: -128px 0;
+}
+footer .social li.youtube a {
+  background-position: -170px 0;
 }
 /* blocks */
 section.top {
@@ -218,6 +264,7 @@ section.top {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
+  background-attachment: fixed;
   padding-top: 95px;
   padding-bottom: 170px;
   height: auto;
@@ -300,6 +347,7 @@ section.top #slider-top .carousel-indicators li.active {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  background-attachment: fixed;
   font-size: 2.2rem;
   line-height: 4.8rem;
   padding-top: 129px;
@@ -324,6 +372,16 @@ section.top #slider-top .carousel-indicators li.active {
   top: 41px;
   left: 29px;
 }
+.quote .content p {
+  text-align: justify;
+}
+.quote .content .author {
+  text-align: right;
+  display: block;
+}
+.quote .content .author::before {
+  content: "- ";
+}
 .features {
   padding: 75px 0;
 }
@@ -342,30 +400,85 @@ section.top #slider-top .carousel-indicators li.active {
 .features article p {
   line-height: 2.4rem;
 }
-.counter {
+/* gallery */
+.gallery {
+  background-color: #2f2f2b;
+  padding-top: 90px;
+}
+.gallery h3 {
+  margin-bottom: 56px;
+  color: #deded7;
+}
+.fancybox-skin {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none !important;
+}
+.gallery-box {
+  overflow: hidden;
+  position: relative;
+}
+.gallery-box img {
+  -webkit-transition: -webkit-transform 0.4s;
+          transition: transform 0.4s;
+  display: block;
+  max-width: 100%;
+}
+.no-touch .gallery-box:hover img,
+.gallery-box.cs-hover img {
+  -webkit-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+          transform: translateY(-50px);
+}
+.gallery_description {
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+          transition: transform 0.4s, opacity 0.1s 0.3s;
+  background-color: #21282f;
+  padding: 20px 10px;
+  color: #ffffff;
+}
+.no-touch .gallery-box:hover .gallery_description,
+.gallery-box.cs-hover .gallery_description {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+          transition: transform 0.4s, opacity 0.1s;
+}
+.counter-section {
   background-color: #2f2f2b;
   padding-top: 60px;
   padding-bottom: 80px;
 }
-.counter article {
+.counter-section article {
   border-color: #6e6e55;
 }
-.counter article div {
+.counter-section article div {
   font-size: 2.4rem;
   text-transform: uppercase;
 }
-.counter article div.middle {
+.counter-section article div.middle {
   font-size: 8rem;
   font-weight: 700;
 }
-.counter article div.bottom {
+.counter-section article div.bottom {
   margin-top: 40px;
 }
-.counter article div.top {
+.counter-section article div.top {
   margin-bottom: 40px;
 }
 .testimonials {
-  padding-top: 87px;
+  padding: 87px 0;
   position: relative;
   z-index: 9999;
 }
@@ -381,9 +494,7 @@ section.top #slider-top .carousel-indicators li.active {
   line-height: 2.4rem;
   background-color: #f1f1ec;
   padding-left: 110px;
-  padding-top: 73px;
   padding-bottom: 110px;
-  padding-right: 330px;
   text-align: left;
   text-shadow: none;
 }
@@ -391,9 +502,28 @@ section.top #slider-top .carousel-indicators li.active {
   position: relative;
   left: 0;
   right: 0;
+  top: 0;
   text-align: left;
   text-shadow: none;
   color: #56553f;
+  padding-top: 74px;
+  padding-right: 330px;
+}
+.testimonials .testimontials_slider .person {
+  background-color: #deded7;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 46px;
+}
+.testimonials .testimontials_slider .person .left {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.testimonials .testimontials_slider .person .right {
+  display: inline-block;
+  vertical-align: middle;
 }
 .testimonials .testimontials_slider .carousel-indicators {
   bottom: 0;
@@ -413,6 +543,147 @@ section.top #slider-top .carousel-indicators li.active {
   top: 67px;
   width: 36px;
   height: 26px;
+}
+.section-map {
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.section-map .content {
+  background-color: #2f2f2b;
+  padding: 54px 73px 54px 60px;
+  width: 50%;
+}
+.contact {
+  font-size: 1.4rem;
+  color: #6e6e55;
+  text-transform: uppercase;
+}
+.contact .form {
+  margin-bottom: 17px;
+}
+.contact h3 {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.contact input {
+  border: 2px solid #404036;
+  padding-left: 22px;
+  padding-top: 15px;
+  padding-bottom: 16px;
+  padding-right: 22px;
+  display: inline-block;
+  width: 100%;
+  margin-right: 9px;
+  margin-bottom: 7px;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+.contact textarea {
+  background-color: transparent;
+  text-transform: uppercase;
+  border: 2px solid #404036;
+  padding-left: 22px;
+  padding-top: 15px;
+  padding-bottom: 16px;
+  padding-right: 22px;
+  display: block;
+  margin-bottom: 7px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 125px;
+}
+.contact ::-webkit-input-placeholder {
+  color: #6e6e55;
+}
+.contact :-moz-placeholder {
+  /* Firefox 18- */
+  color: #6e6e55;
+}
+.contact ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #6e6e55;
+}
+.contact :-ms-input-placeholder {
+  color: #6e6e55;
+}
+.contact button {
+  text-transform: uppercase;
+  padding: 28px 40px;
+  border: 0;
+}
+.contact .box {
+  background-color: #fff;
+  color: #21282f;
+  padding: 30px 40px;
+}
+.contact ul li {
+  display: block;
+}
+.contact ul li span {
+  display: inline-block;
+  word-break: break-all;
+  line-height: 4.5rem;
+}
+.contact ul li span.first {
+  font-weight: 700;
+  margin-right: 10px;
+  min-width: 80px;
+}
+.contact table tr td {
+  line-height: 4.5rem;
+}
+.contact table tr td.first {
+  font-weight: 700;
+  margin-right: 10px;
+  min-width: 80px;
+}
+#map {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+  top: 0;
+}
+@media (max-width: 991px) {
+  .top #slider-top {
+    width: 100% !important;
+  }
+  .testimonials .testimontials_slider {
+    width: 100%;
+  }
+  .section-map .content {
+    width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .one-of-four {
+    width: 50%;
+  }
+  .counter-section article {
+    margin-bottom: 20px;
+  }
+  .testimonials .testimontials_slider {
+    padding-right: 110px;
+  }
+  .testimonials .testimontials_slider .item .carousel-caption {
+    padding-right: 0;
+    width: 100%;
+  }
+  .testimonials .testimontials_slider .item .person {
+    position: relative;
+  }
+  .section-map .content {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .one-of-four {
+    width: 100%;
+  }
+}
+.container-full {
+  width: 100%;
 }
 body,
 html {
