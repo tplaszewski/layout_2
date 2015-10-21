@@ -197,30 +197,72 @@ i {
 a {
   font-size: inherit;
   color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
 }
 .one-of-four {
   width: 25%;
 }
+.button {
+  text-transform: uppercase;
+  display: inline-block;
+  border: 0;
+  background-color: #56553f;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 0 0 #6e6e55 inset;
+  -webkit-transition: all 0.8s ease 0s;
+          transition: all 0.8s ease 0s;
+}
+.button:hover {
+  box-shadow: 0 100px 0 0 #6e6e55 inset;
+  background-color: #6e6e55;
+  color: white;
+}
 header.navbar {
   padding: 37px 0;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   border-radius: 0;
   border: 0;
-  background-color: white;
-  opacity: 0.85;
-  z-index: 9;
+  background: url(../img/header_bg.png);
+  z-index: 49;
+}
+header.navbar .navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: auto;
+  min-height: 0;
 }
 header nav ul li {
   font-size: 1.4rem;
   color: #615f50;
+}
+header nav ul li a {
+  text-shadow: none;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+header nav ul li a:hover {
+  background-color: transparent !important;
+}
+header .navbar-toggle {
+  border: 1px solid #56553f;
+}
+header .navbar-toggle .icon-bar {
+  color: #56553f;
+  background-color: #56553f;
 }
 footer {
   background-color: #2f2f2b;
   text-align: center;
   padding: 63px 0;
   font-size: 1.4rem;
+  color: #7a7a77;
 }
 footer .social {
   text-align: center;
@@ -265,15 +307,15 @@ section.top {
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
-  padding-top: 95px;
+  padding-top: 200px;
   padding-bottom: 170px;
   height: auto;
 }
 section.top #slider-top {
   width: 52%;
   padding: 60px 42px 60px 42px;
-  background-color: #f6f6f6;
-  opacity: 0.6;
+  padding-bottom: 0;
+  background-image: url(../img/top_slider_bg.png);
   color: #56553f;
 }
 section.top #slider-top .carousel-inner .item .carousel-caption {
@@ -296,8 +338,9 @@ section.top #slider-top .carousel-inner .item .carousel-caption h2 {
   font-weight: 300;
   margin-bottom: 35px;
 }
-section.top #slider-top .carousel-inner .item .carousel-caption a {
+section.top #slider-top .carousel-inner .item .carousel-caption .button {
   margin-top: 30px;
+  padding: 24px 70px;
 }
 section.top #slider-top .carousel-indicators {
   top: 20px;
@@ -424,27 +467,41 @@ section.top #slider-top .carousel-indicators li.active {
   display: block;
   max-width: 100%;
 }
-.no-touch .gallery-box:hover img,
-.gallery-box.cs-hover img {
-  -webkit-transform: translateY(-50px);
-      -ms-transform: translateY(-50px);
-          transform: translateY(-50px);
-}
 .gallery_description {
   position: absolute;
-  height: 80px;
+  height: 100%;
   width: 100%;
   top: auto;
   bottom: 0;
-  opacity: 0;
+  opacity: 1;
   -webkit-transform: translateY(100%);
       -ms-transform: translateY(100%);
           transform: translateY(100%);
   -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
           transition: transform 0.4s, opacity 0.1s 0.3s;
-  background-color: #21282f;
   padding: 20px 10px;
   color: #ffffff;
+}
+.gallery_description h4 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  top: 65%;
+}
+.gallery_description::before {
+  content: "";
+  background-image: url(../img/ico_gallery_hover.png);
+  height: 45px;
+  width: 45px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .no-touch .gallery-box:hover .gallery_description,
 .gallery-box.cs-hover .gallery_description {
@@ -609,9 +666,8 @@ section.top #slider-top .carousel-indicators li.active {
   color: #6e6e55;
 }
 .contact button {
-  text-transform: uppercase;
-  padding: 28px 40px;
-  border: 0;
+  padding: 28px 70px;
+  margin-top: -30px;
 }
 .contact .box {
   background-color: #fff;
@@ -630,6 +686,7 @@ section.top #slider-top .carousel-indicators li.active {
   font-weight: 700;
   margin-right: 10px;
   min-width: 80px;
+  color: #56553f;
 }
 .contact table tr td {
   line-height: 4.5rem;
@@ -655,10 +712,23 @@ section.top #slider-top .carousel-indicators li.active {
   .section-map .content {
     width: 70%;
   }
+  .gallery_description h4 {
+    top: 50%;
+  }
 }
 @media (max-width: 768px) {
   .one-of-four {
     width: 50%;
+  }
+  header .navbar-header .navbar-toggle {
+    margin-top: 0;
+  }
+  header .navbar-header .navbar-brand {
+    margin-top: 6px;
+  }
+  header nav ul li a {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
   }
   .counter-section article {
     margin-bottom: 20px;
