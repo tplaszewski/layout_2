@@ -736,7 +736,8 @@ section.top #slider-top .carousel-indicators li.active {
     margin-bottom: 20px;
   }
   .testimonials .testimontials_slider {
-    padding-right: 110px;
+    padding-right: 80px;
+    padding-left: 80px;
   }
   .testimonials .testimontials_slider .item .carousel-caption {
     padding-right: 0;
@@ -744,6 +745,9 @@ section.top #slider-top .carousel-indicators li.active {
   }
   .testimonials .testimontials_slider .item .person {
     position: relative;
+  }
+  .testimonials .testimontials_slider::before {
+    left: 17px;
   }
   .section-map .content {
     width: 100%;
