@@ -257,20 +257,34 @@ $(function() {
 	  });
 	});
 
+$(document).ready(function() {     
+  $("#slider-top").owlCarousel({     
+      //navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+          // "singleItem:true" is a shortcut for:
+          // items : 1, 
+          // itemsDesktop : false,
+          // itemsDesktopSmall : false,
+          // itemsTablet: false,
+          // itemsMobile : false
+     
+  });
+    $("#slider-testimonials").owlCarousel({     
+      //navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+          // "singleItem:true" is a shortcut for:
+          // items : 1, 
+          // itemsDesktop : false,
+          // itemsDesktopSmall : false,
+          // itemsTablet: false,
+          // itemsMobile : false
+     
+  }); 
+    
+});
 
 
-
-$(document).ready(function() {  
-    $("#carousel-example-generic").swiperight(function() {  
-        $(this).carousel('prev');  
-    }); 
-    $("#slider-top").swiperight(function() {  
-        $(this).carousel('prev');  
-    });
-    $("#carousel-example-generic").swipeleft(function() {  
-        $(this).carousel('next');  
-    });  
-    $("#slider-top").swipeleft(function() {  
-        $(this).carousel('next');  
-    });
-});  
