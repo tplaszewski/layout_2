@@ -37,65 +37,77 @@
 
         <!-- End Preloader -->
 
-        <header class="navbar">
-        <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <h1>
-                    <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>    
-                </h1>          
-            </div>
+        <header class="navbar fixed">
+            <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1>
+                        <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>    
+                    </h1>          
+                </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
             
         </header>
     
         <main>
             <section class="top" id="top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="slider-top" class="owl-carousel owl-theme">
-                                <div class="item">
-                                    <div class="carousel-caption">
-                                        <h2>First slide title</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat massa ex, nec vestibulum neque tincidunt interdum. Nam et ex sit amet purus mollis convallis non sed quam. Nullam vehicula nunc quis ullamcorper malesuada. Nunc vitae sodales nisl, eget posuere ante. Sed ut dui vitae diam tempor suscipit. Quisque vel erat eu nisl scelerisque lobortis. Nunc convallis leo id volutpat cursus.</p>
-                                        <div class="text-center">
-                                            <a href="#" class="button">more info</a>
-                                        </div>
-                                    </div>    
+                <div id="slider-top" class="owl-carousel">
+                    <div class="item parallax-section" style="background-image: url(img/slider/slide1.jpg);" data-type="background" data-speed="10">
+                        <div class="container">
+                            <div class="caption">
+                                <div class="caption-inner">
+                                    <h2>First slide title</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat massa ex, nec vestibulum neque tincidunt interdum. Nam et ex sit amet purus mollis convallis non sed quam. Nullam vehicula nunc quis ullamcorper malesuada.  </p>    
                                 </div>
-                                
-                                <div class="item">
-                                    <div class="carousel-caption">
-                                        <h2>Second slide title</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat massa ex, nec vestibulum neque tincidunt interdum. Nam et ex sit amet purus mollis convallis non sed quam. Nullam vehicula nunc quis ullamcorper malesuada. Nunc vitae sodales nisl, eget posuere ante. Sed ut dui vitae diam tempor suscipit. Quisque vel erat eu nisl scelerisque lobortis. Nunc convallis leo id volutpat cursus.</p>
-                                        <div class="text-center">
-                                            <a href="#" class="button">more info</a>
-                                        </div>
-                                    </div>    
-                                </div>                  
-                            </div>
+                                <a href="#" class="button">more info</a>    
+                            </div>    
                         </div>
                     </div>
-                </div> 
+                    <div class="item parallax-section" style="background-image: url(img/slider/slide2.jpg);" data-type="background" data-speed="10">
+                        <div class="container">
+                            <div class="caption">
+                                <div class="caption-inner">
+                                    <h2>Second slide title</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat massa ex, nec vestibulum neque tincidunt interdum. Nam et ex sit amet purus mollis convallis non sed quam. Nullam vehicula nunc quis ullamcorper malesuada. </p>    
+                                </div>
+                                <a href="#" class="button">more info</a>    
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="item parallax-section" style="background-image: url(img/slider/slide3.jpg);" data-type="background" data-speed="10">
+                        <div class="container">
+                            <div class="caption">
+                                <div class="caption-inner">
+                                    <h2>Third slide title</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat massa ex, nec vestibulum neque tincidunt interdum. Nam et ex sit amet purus mollis convallis non sed quam. Nullam vehicula nunc quis ullamcorper malesuada. </p>    
+                                </div>
+                                <a href="#" class="button">more info</a>    
+                            </div>    
+                        </div>
+                    </div>
+
+                </div>
+
             </section>
+            
+            
             <section id="about" class="about wow fadeInDown" data-wow-delay="0.3s">
                 <div class="container">
                     <div class="row">
@@ -134,13 +146,13 @@
                     </div>
                 </div>
             </section>
-            <section id="quote" class="quote " >
+            <section id="quote" class="quote parallax-section" data-type="background" data-speed="10">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-offset-6 col-md-6 wow fadeInDown" data-wow-delay="0.3s">
                             <div class="content">
-                                <p>Nullam vehicula nunc quis ullamcorper malesuada. Nunc vitae sodales nisl, eget posuere ante. Sed ut dui vitae diam tempor suscipit.</p>
-                                <span class="author">John Doe</span>
+                                <p>Integer cursus non mi vel euismod. Sed feugiat dui at magna maximus ultricies. Nulla at tempus tellus. Nunc nec molestie ex. Vivamus at gravida sem.</p>
+                                <span class="author">John Dove</span>
                             </div>    
                         </div>
                     </div>
@@ -156,37 +168,37 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
                             <article class="box-border text-center">
-                                <h4>Header</h4>
+                                <h4>Header 2</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa ex, nec vestibulum neque tincidunt interdum.</p>
                             </article>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <article class="box-border text-center">
-                                <h4>Header</h4>
+                                <h4>Header 2</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa ex, nec vestibulum neque tincidunt interdum.</p>
                             </article>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <article class="box-border text-center">
-                                <h4>Header</h4>
+                                <h4>Header 2</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa ex, nec vestibulum neque tincidunt interdum.</p>
                             </article>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <article class="box-border text-center">
-                                <h4>Header</h4>
+                                <h4>Header 2</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa ex, nec vestibulum neque tincidunt interdum.</p>
                             </article>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <article class="box-border text-center">
-                                <h4>Header</h4>
+                                <h4>Header 2</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa ex, nec vestibulum neque tincidunt interdum.</p>
                             </article>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <article class="box-border text-center">
-                                <h4>Header</h4>
+                                <h4>Header 2</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa ex, nec vestibulum neque tincidunt interdum.</p>
                             </article>
                         </div>
@@ -389,7 +401,7 @@ Sed ut dui vitae diam tempor suscipit. Quisque vel erat eu nisl scelerisque lobo
                     </div>
                 </div>
             </section>
-            <section id="contact" class="section-map">
+            <section  class="section-map">
                 <div id="map"></div>
                 <section id="contact" class="contact">
                     <div class="container">
@@ -436,15 +448,15 @@ Sed ut dui vitae diam tempor suscipit. Quisque vel erat eu nisl scelerisque lobo
                                         <div class="col-md-12">
                                                 <table>
                                                     <tr>
-                                                        <td class="first">mail</td>
+                                                        <td class="first">mail.</td>
                                                         <td>office@company.com</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="first">mobile</td>
+                                                        <td class="first">mobile.</td>
                                                         <td>+48 723 251 344</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="first">adress</td>
+                                                        <td class="first">adress.</td>
                                                         <td>Some Address, 348445 Some City</td>
                                                     </tr>
                                                 </table>
@@ -492,15 +504,15 @@ Sed ut dui vitae diam tempor suscipit. Quisque vel erat eu nisl scelerisque lobo
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         
-
-
-
+        <script>
+            $('.parallax-section').parallax({
+                speed : 0.15
+            });
+        </script>
+        
 
     </body>
 </html>

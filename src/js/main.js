@@ -5,14 +5,6 @@ $(window).load(function() { // makes sure the whole site is loaded
                 $('body').delay(350).css({'overflow':'visible'});
             });
 
-//$( document ).ready(function() {
-//	var $container = jQuery('#masonry-grid');
-//	// initialize
-//	$container.masonry({
-//        itemSelector: '.grid-item',
-//        columnWidth: 1
-//	});
-//});
 
 
 $(document).ready(function(){
@@ -228,7 +220,15 @@ window.onload = function () {
             mapTypeId: 'Styled'
         };
         var div = document.getElementById('map');
-        var map = new google.maps.Map(div, options);
+        var map = new google.maps.Map(div, options, marker, myLatLng);
+        var myLatLng = {lat: -25.363, lng: 131.044};
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+          });
+
         var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
         map.mapTypes.set('Styled', styledMapType);
         }
@@ -259,16 +259,9 @@ $(function() {
 
 $(document).ready(function() {     
   $("#slider-top").owlCarousel({     
-      //navigation : true, // Show next and prev buttons
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem:true
-          // "singleItem:true" is a shortcut for:
-          // items : 1, 
-          // itemsDesktop : false,
-          // itemsDesktopSmall : false,
-          // itemsTablet: false,
-          // itemsMobile : false
+          navigation : true,
+    singleItem : true,
+    
      
   });
     $("#slider-testimonials").owlCarousel({     
@@ -276,15 +269,10 @@ $(document).ready(function() {
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true
-          // "singleItem:true" is a shortcut for:
-          // items : 1, 
-          // itemsDesktop : false,
-          // itemsDesktopSmall : false,
-          // itemsTablet: false,
-          // itemsMobile : false
-     
   }); 
-    
 });
+
+/*parallax*/
+
 
 

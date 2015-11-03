@@ -1,6 +1,6 @@
 header{
     &.navbar{
-        padding: 37px 0;
+        padding: 36px 0;
         position: absolute;
         top: 0;
         left: 0;
@@ -10,25 +10,32 @@ header{
         //background-color: white;
         background: url(../img/header_bg.png);
         //opacity: 0.85;
-        z-index: 49;
+        z-index: 999;
         .navbar-brand{
             padding-top: 0;
             padding-bottom: 0;
             height: auto;
             min-height: 0;
         }
+        &.fixed{
+            position: fixed;
+            top: 0;
+        }
     }
     nav{
         ul{
             li{
                 font-size: 1.4rem;
+                font-weight: 400;
                 color: #615f50;
+                letter-spacing: 0.02em;
                 a{
                     text-shadow: none;
                     padding-top: 0 !important;
                     padding-bottom: 0 !important;
                     &:hover{
                         background-color: transparent !important;
+                        color: #6e6e55;
                     }
                 }
             }
