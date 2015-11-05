@@ -45,6 +45,33 @@ window.onload = function () {
             var styles = [
     {
         "featureType": "all",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
         "elementType": "labels.text.fill",
         "stylers": [
             {
@@ -106,6 +133,78 @@ window.onload = function () {
             },
             {
                 "weight": 1.2
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.province",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.province",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.locality",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.locality",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.land_parcel",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
             }
         ]
     },
@@ -214,20 +313,25 @@ window.onload = function () {
             mapTypeControlOptions: {
                 mapTypeIds: ['Styled']
             },
-            center: new google.maps.LatLng(-7.245217594087794, 112.74455556869509),
-            zoom: 16,
+            center: new google.maps.LatLng(-25.463, 128.044),
+            zoom: 4,
             disableDefaultUI: true,	
             mapTypeId: 'Styled'
         };
         var div = document.getElementById('map');
+    
         var map = new google.maps.Map(div, options, marker, myLatLng);
+    
         var myLatLng = {lat: -25.363, lng: 131.044};
+        var image = 'img/marker.png';
 
         var marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
-            title: 'Hello World!'
+            icon: image
           });
+    
+        marker.setMap(map);
 
         var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
         map.mapTypes.set('Styled', styledMapType);
@@ -273,6 +377,38 @@ $(document).ready(function() {
 });
 
 /*parallax*/
+$('.parallax-section').parallax({
+    speed : 0.15
+});
+
+/* hide menu */
+$('.nav a').on('click', function(){
+    $('.navbar-toggle').click(); 
+});
+
+/*scroll height */
+
+$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+				var top_offset = 0;
+				if ( $('.navbar').css('position') == 'fixed' ) {
+					top_offset = $('.navbar').height();
+				}
+				 $('html,body').animate({
+					 scrollTop: target.offset().top - top_offset
+				}, 1000);
+				return false;
+			}
+		}
+	});	
+	});
 
 
+
+  
+  
 

@@ -1453,6 +1453,16 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 			if (!iframe && current.autoHeight && height > minHeight && height < maxHeight && !canExpand) {
 				inner.height('auto');
 			}
+            
+            // my code
+            $(F.outer).on('swipeleft', function() {
+                F.next();
+            });
+            $(F.outer).on('swiperight', function() {
+                F.prev();
+            });
+            
+            
 		},
 
 		_getPosition: function (onlyAbsolute) {

@@ -1,0 +1,81 @@
+.testimonials{
+    padding:87px 0;
+    position: relative;
+    z-index: 998;
+    h3{
+        font-weight: 400;
+        margin-bottom: 66px;
+    }
+    
+    .testimontials_slider{
+        width: 80%;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+        background-color: #f1f1ec;
+        padding-left: 110px;
+        padding-bottom: 110px;
+        text-align: left;
+        text-shadow: none;
+        .carousel-caption{
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 0;
+            text-align: left;
+            text-shadow: none;
+            color: #56553f;
+            padding-top: 74px;
+            padding-right: 330px;
+            letter-spacing: 0.02em;
+        }
+        .person{
+            background-color: #deded7;
+            position: absolute;
+            top:0;
+            right: 0;
+            padding: 46px;
+            .left{
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 15px;
+            }
+            .right{
+                display: inline-block;
+                vertical-align: middle;
+                p{
+                    font-size: 1.6rem;
+                    line-height: 1.8rem;
+                    &:last-child{
+                        font-size: 1.4rem;
+                        
+                    }
+                }
+            }
+        }
+        .carousel-indicators{
+            bottom: 0;
+            li{
+                width: 14px;
+                height: 14px;
+                margin: 0;
+            }
+        }
+        .carousel-inner{
+            
+        }
+        &::before{
+            content: '';
+            background-image: url(../img/ico_quote.png);
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            position: absolute;
+            left: 47px;
+            top:67px;
+            width: 36px;
+            height: 26px;
+        }
+    }
+    
+}
